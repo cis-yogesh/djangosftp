@@ -103,10 +103,10 @@ class Connection(object):
         self._sftp_connect()
         self._sftp.rename(oldpath, newpath)
 
-    def mkdir(self, path, mode=0777):
+    def mkdir(self, path, mode=777):
         """ Create New dir on given path, as given file permission """
         self._sftp_connect()
-        self._sftp.mkdir(path, mode=0777)
+        self._sftp.mkdir(path, mode=777)
         
     def chmod(self, path, mode):
         """ Change the permision of path """
